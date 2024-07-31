@@ -221,3 +221,20 @@ def generate_sudoku(size, removed):
     sudoku.remove_cells()
     board = sudoku.get_board()
     return board
+
+class Cell:
+    def __init__(self, value, row, col, screen):
+        self.value = value
+        self.row = row
+        self.col = col
+        self.screen = screen
+
+    def set_cell_value(self, value):
+        #Setter for this cell’s value
+        self.value = value
+
+    def set_sketched_value(self, value):
+        #Setter for this cell’s sketched value
+
+    def draw(self):
+
