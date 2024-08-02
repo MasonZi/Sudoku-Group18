@@ -29,6 +29,20 @@ def main():
             pygame.quit()
             sys.exit()
     pygame.display.update()
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            pos = event.pos
+            print(f"Mouse clicked at: {pos}")
+
+            cell_size = SCREEN_WIDTH // 9
+            row = pos[1] // cell_size
+            col = pos[0] // cell_size
+            selected_cell = (row, col)
+            print(f"Selected cell: {selected_cell}")
+
+            if event.type == pygame.KEYDOWN:
+                if selected_cell:
+                    if event.key == pygame.K_RETURN:
+                        print(f"Enter pressed in cell: {selected_cell}")
 
 
 if __name__ == "__main__":
