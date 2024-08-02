@@ -191,6 +191,14 @@ class SudokuGenerator:
         self.fill_diagonal()
         self.fill_remaining(0, self.box_length)
 
+    def remove_cells(self):
+        cells = [(r, c) for r in range(self.row_length) for c in range(self.row_length)]
+        random.shuffle(cells)
+
+        cells_to_remove = cells[:self.removed_cells]
+        for (row, col) in cells_to_remove:
+            self.board[row][col] = 0
+
     '''
     Removes the appropriate number of cells from the board
     This is done by setting some values to 0
