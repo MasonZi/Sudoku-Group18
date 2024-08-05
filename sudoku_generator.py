@@ -102,38 +102,38 @@ def generate_sudoku(size, removed):
     return board
 
 
-class Cell:
-    def __init__(self, value, row, col, screen):
-        self.value = value
-        self.row = row
-        self.col = col
-        self.screen = screen
-        self.sketch_value = None
-        self.selected = False
-
-    def set_cell_value(self, value):
-        # Setter for this cell’s value
-        self.value = value
-
-    def set_sketched_value(self, value):
-        # Setter for this cell’s sketched value
-        self.sketch_value = value
-
-    def draw(self):
-        cell_size = 50
-        x = self.col * cell_size
-        y = self.row * cell_size
-
-        # Draw the cell outline
-        if self.selected == True:
-            self.screen.draw_rect(x, y, cell_size, cell_size, color='red')
-        else:
-            self.screen.draw_rect(x, y, cell_size, cell_size, color='black')
-
-        # Cell Value
-        if self.value != 0:
-            self.screen.draw_text(x + cell_size // 2, y + cell_size // 2, str(self.value), color='black')
-
-        # Draw the sketched value if present
-        if self.sketch_value is not None:
-            self.screen.draw_text(x + cell_size // 2, y + cell_size // 2 - 10, str(self.sketch_value), color='gray')
+# class Cell:
+#     def __init__(self, value, row, col, screen):
+#         self.value = value
+#         self.row = row
+#         self.col = col
+#         self.screen = screen
+#         self.sketch_value = None
+#         self.selected = False
+#
+#     def set_cell_value(self, value):
+#         # Setter for this cell’s value
+#         self.value = value
+#
+#     def set_sketched_value(self, value):
+#         # Setter for this cell’s sketched value
+#         self.sketch_value = value
+#
+#     def draw(self):
+#         cell_size = 50
+#         x = self.col * cell_size
+#         y = self.row * cell_size
+#
+#         # Draw the cell outline
+#         if self.selected == True:
+#             self.screen.draw_rect(x, y, cell_size, cell_size, color='red')
+#         else:
+#             self.screen.draw_rect(x, y, cell_size, cell_size, color='black')
+#
+#         # Cell Value
+#         if self.value != 0:
+#             self.screen.draw_text(x + cell_size // 2, y + cell_size // 2, str(self.value), color='black')
+#
+#         # Draw the sketched value if present
+#         if self.sketch_value is not None:
+#             self.screen.draw_text(x + cell_size // 2, y + cell_size // 2 - 10, str(self.sketch_value), color='gray')
