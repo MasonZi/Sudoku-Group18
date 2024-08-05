@@ -6,8 +6,8 @@ from cell_and_board_class import *
 
 pygame.init()
 # Constants
-SCREEN_WIDTH = 600
-SCREEN_HEIGHT = 700
+SCREEN_WIDTH = 451
+SCREEN_HEIGHT = 560
 TITLE_BACKGROUND = (220, 220, 220)
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
@@ -19,7 +19,7 @@ DIFFICULTY = 0
 
 def draw_game_start(screen):
     # Title Screen font sizes
-    title_font = pygame.font.Font(None, 75)
+    title_font = pygame.font.Font(None, 65)
     difficulty_font = pygame.font.Font(None, 50)
     button_font = pygame.font.Font(None, 30)
 
@@ -27,7 +27,7 @@ def draw_game_start(screen):
     screen.fill(TITLE_BACKGROUND)
 
     # Initialize and draw title and difficulty words
-    sudoku_title = title_font.render("Welcome to Sudoku", 0, BLACK)
+    sudoku_title = title_font.render("Welcome to Sudoku!", 0, BLACK)
     sudoku_rectangle = sudoku_title.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 - 200))
     screen.blit(sudoku_title, sudoku_rectangle)
 
