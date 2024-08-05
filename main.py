@@ -1,12 +1,10 @@
-# This is where the main function will be run
 import pygame
 import sys
-
 import sudoku_generator
 from sudoku_generator import *
 from cell_and_board_class import *
 
-
+pygame.init()
 # Constants
 SCREEN_WIDTH = 600
 SCREEN_HEIGHT = 700
@@ -30,11 +28,11 @@ def draw_game_start(screen):
 
     # Initialize and draw title and difficulty words
     sudoku_title = title_font.render("Welcome to Sudoku", 0, BLACK)
-    sudoku_rectangle = sudoku_title.get_rect(center=(SCREEN_WIDTH//2, SCREEN_HEIGHT//2 - 200))
+    sudoku_rectangle = sudoku_title.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 - 200))
     screen.blit(sudoku_title, sudoku_rectangle)
 
     difficulty_text = difficulty_font.render("Select A Game Mode:", 0, BLACK)
-    difficulty_rectangle = difficulty_text.get_rect(center=(SCREEN_WIDTH//2, SCREEN_HEIGHT//2,))
+    difficulty_rectangle = difficulty_text.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2,))
     screen.blit(difficulty_text, difficulty_rectangle)
 
     # Initialize Button Text
@@ -43,22 +41,22 @@ def draw_game_start(screen):
     hard_text = button_font.render("Hard", 0, BLACK)
 
     # Button Background color and text
-    easy_surface = pygame.Surface((easy_text.get_size()[0]+20, easy_text.get_size()[0]))
+    easy_surface = pygame.Surface((easy_text.get_size()[0] + 20, easy_text.get_size()[0]))
     easy_surface.fill(BUTTON_COLOR)
     easy_surface.blit(easy_text, (10, 10))
 
-    medium_surface = pygame.Surface((medium_text.get_size()[0]+20, medium_text.get_size()[0]-30))
+    medium_surface = pygame.Surface((medium_text.get_size()[0] + 20, medium_text.get_size()[0] - 30))
     medium_surface.fill(BUTTON_COLOR)
     medium_surface.blit(medium_text, (10, 10))
 
-    hard_surface = pygame.Surface((hard_text.get_size()[0]+20, hard_text.get_size()[0]))
+    hard_surface = pygame.Surface((hard_text.get_size()[0] + 20, hard_text.get_size()[0]))
     hard_surface.fill(BUTTON_COLOR)
     hard_surface.blit(hard_text, (10, 10))
 
     # Initialize button rectangle
-    easy_rectangle = easy_surface.get_rect(center=(SCREEN_WIDTH//2-100, SCREEN_HEIGHT//2+100))
-    medium_rectangle = medium_surface.get_rect(center=(SCREEN_WIDTH//2, SCREEN_HEIGHT//2+100))
-    hard_rectangle = hard_surface.get_rect(center=(SCREEN_WIDTH//2+100, SCREEN_HEIGHT//2+100))
+    easy_rectangle = easy_surface.get_rect(center=(SCREEN_WIDTH // 2 - 100, SCREEN_HEIGHT // 2 + 100))
+    medium_rectangle = medium_surface.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 + 100))
+    hard_rectangle = hard_surface.get_rect(center=(SCREEN_WIDTH // 2 + 100, SCREEN_HEIGHT // 2 + 100))
 
     # Draw buttons
     screen.blit(easy_surface, easy_rectangle)
@@ -93,30 +91,30 @@ def draw_game_play(screen, difficulty):
     exit_text = button_font.render("Exit", 0, BLACK)
 
     # Reset Surface
-    reset_surface = pygame.Surface((reset_text.get_size()[0]+20, restart_text.get_size()[0]-15))
+    reset_surface = pygame.Surface((reset_text.get_size()[0] + 20, restart_text.get_size()[0] - 15))
     reset_surface.fill(BUTTON_COLOR)
     reset_surface.blit(reset_text, (10, 10))
 
     # Reset Button
-    reset_rect = reset_surface.get_rect(center=[SCREEN_WIDTH // 2-250, SCREEN_HEIGHT // 2 + 325])
+    reset_rect = reset_surface.get_rect(center=[SCREEN_WIDTH // 2 - 250, SCREEN_HEIGHT // 2 + 325])
     screen.blit(reset_surface, reset_rect)
 
     # Restart Surface
-    restart_surface = pygame.Surface((restart_text.get_size()[0]+20, restart_text.get_size()[0]-15))
+    restart_surface = pygame.Surface((restart_text.get_size()[0] + 20, restart_text.get_size()[0] - 15))
     restart_surface.fill(BUTTON_COLOR)
     restart_surface.blit(restart_text, (10, 10))
 
     # Restart Button
-    restart_rect = restart_surface.get_rect(center=[SCREEN_WIDTH // 2-150, SCREEN_HEIGHT // 2 + 325])
+    restart_rect = restart_surface.get_rect(center=[SCREEN_WIDTH // 2 - 150, SCREEN_HEIGHT // 2 + 325])
     screen.blit(restart_surface, restart_rect)
 
     # Exit Surface
-    exit_surface = pygame.Surface((exit_text.get_size()[0]+20, exit_text.get_size()[0]+10))
+    exit_surface = pygame.Surface((exit_text.get_size()[0] + 20, exit_text.get_size()[0] + 10))
     exit_surface.fill(BUTTON_COLOR)
     exit_surface.blit(exit_text, (10, 10))
 
     # Exit Button
-    exit_rect = exit_surface.get_rect(center=[SCREEN_WIDTH // 2-50, SCREEN_HEIGHT // 2 + 325])
+    exit_rect = exit_surface.get_rect(center=[SCREEN_WIDTH // 2 - 50, SCREEN_HEIGHT // 2 + 325])
     screen.blit(exit_surface, exit_rect)
 
     while True:
@@ -149,7 +147,7 @@ def draw_game_won(screen):
     # Restart Text
     exit_text = exit_font.render("Exit", 0, BLACK)
     # Restart Button
-    exit_surface = pygame.Surface((exit_text.get_size()[0]+20, exit_text.get_size()[0]))
+    exit_surface = pygame.Surface((exit_text.get_size()[0] + 20, exit_text.get_size()[0]))
     exit_surface.fill(BUTTON_COLOR)
     exit_surface.blit(exit_text, (10, 10))
     # Button Rectangle
@@ -176,12 +174,12 @@ def draw_game_lost(screen):
     restart_font = pygame.font.Font(None, 30)
     # Text
     game_lost_surface = game_lost_font.render("Game Over :/", 0, BLACK)
-    game_lost_rect = game_lost_surface.get_rect(center=[SCREEN_WIDTH//2, SCREEN_HEIGHT//2 - 50])
+    game_lost_rect = game_lost_surface.get_rect(center=[SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 - 50])
     screen.blit(game_lost_surface, game_lost_rect)
     # Restart Text
     restart_text = restart_font.render("Restart", 0, BLACK)
     # Restart Button
-    restart_surface = pygame.Surface((restart_text.get_size()[0] + 20, restart_text.get_size()[0]-30))
+    restart_surface = pygame.Surface((restart_text.get_size()[0] + 20, restart_text.get_size()[0] - 30))
     restart_surface.fill(BUTTON_COLOR)
     restart_surface.blit(restart_text, (10, 10))
     # Button Rectangle
@@ -200,29 +198,52 @@ def draw_game_lost(screen):
 
 
 def main():
+    """ Main function to set up the game window, handle events, and update the game state """
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     pygame.display.set_caption("Sudoku")
 
+    # Show difficulty selection screen
     difficulty = draw_game_start(screen)
-    board = Board(450, 450, screen, difficulty)
+
+    # Create a Sudoku board with the selected difficulty
+    board = Board(500, 500, screen, difficulty)
+
+    # Define buttons
+    font = pygame.font.Font(None, 25)
+    reset_text = font.render("Reset", True, BLACK)
+    restart_text = font.render("Restart", True, BLACK)
+    exit_text = font.render("Exit", True, BLACK)
+
+    # Position buttons at the bottom of the screen
+    reset_rect = reset_text.get_rect(center=(SCREEN_WIDTH // 2 - 150, SCREEN_HEIGHT - 50))
+    restart_rect = restart_text.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT - 50))
+    exit_rect = exit_text.get_rect(center=(SCREEN_WIDTH // 2 + 150, SCREEN_HEIGHT - 50))
 
     running = True
     while running:
         screen.fill(WHITE)
 
         for event in pygame.event.get():
-            # pygame.display.update()
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 pos = event.pos
-                cell_size = SCREEN_WIDTH // 9
-                row = pos[1] // cell_size
-                col = pos[0] // cell_size
-                board.select(row, col)
+                # Check if the click is within the board area
+                if 50 <= pos[0] <= 550 and 50 <= pos[1] <= 550:
+                    row = (pos[1] - 50) // 50
+                    col = (pos[0] - 50) // 50
+                    board.select(row, col)
+                elif reset_rect.collidepoint(pos):
+                    board.reset_to_original()
+                elif restart_rect.collidepoint(pos):
+                    difficulty = draw_game_start(screen)
+                    board = Board(500, 500, screen, difficulty)
+                elif exit_rect.collidepoint(pos):
+                    pygame.quit()
+                    sys.exit()
             elif event.type == pygame.KEYDOWN:
-                if board and board.selected_cell:
+                if board.selected_cell:
                     if event.key == pygame.K_1:
                         board.place_number(1)
                     if event.key == pygame.K_2:
@@ -242,7 +263,12 @@ def main():
                     if event.key == pygame.K_9:
                         board.place_number(9)
 
+        # Draw the board and buttons
         board.draw()
+        screen.blit(reset_text, reset_rect)
+        screen.blit(restart_text, restart_rect)
+        screen.blit(exit_text, exit_rect)
+
         pygame.display.flip()
 
 
