@@ -7,8 +7,7 @@ from sudoku_generator import *
 from cell_and_board_class import *
 
 
-
-# Constants - uppercase to stand out
+# Constants
 SCREEN_WIDTH = 600
 SCREEN_HEIGHT = 700
 TITLE_BACKGROUND = (220, 220, 220)
@@ -20,8 +19,6 @@ BUTTON_COLOR = (100, 100, 100)
 DIFFICULTY = 0
 
 
-# generate_sudoku()
-# Board.draw()
 def draw_game_start(screen):
     # Title Screen font sizes
     title_font = pygame.font.Font(None, 75)
@@ -46,18 +43,17 @@ def draw_game_start(screen):
     hard_text = button_font.render("Hard", 0, BLACK)
 
     # Button Background color and text
-
     easy_surface = pygame.Surface((easy_text.get_size()[0]+20, easy_text.get_size()[0]))
     easy_surface.fill(BUTTON_COLOR)
     easy_surface.blit(easy_text, (10, 10))
 
     medium_surface = pygame.Surface((medium_text.get_size()[0]+20, medium_text.get_size()[0]-30))
     medium_surface.fill(BUTTON_COLOR)
-    medium_surface.blit(medium_text, (10,10))
+    medium_surface.blit(medium_text, (10, 10))
 
     hard_surface = pygame.Surface((hard_text.get_size()[0]+20, hard_text.get_size()[0]))
     hard_surface.fill(BUTTON_COLOR)
-    hard_surface.blit(hard_text, (10,10))
+    hard_surface.blit(hard_text, (10, 10))
 
     # Initialize button rectangle
     easy_rectangle = easy_surface.get_rect(center=(SCREEN_WIDTH//2-100, SCREEN_HEIGHT//2+100))
@@ -65,10 +61,9 @@ def draw_game_start(screen):
     hard_rectangle = hard_surface.get_rect(center=(SCREEN_WIDTH//2+100, SCREEN_HEIGHT//2+100))
 
     # Draw buttons
-    screen.blit(easy_surface,easy_rectangle)
-    screen.blit(medium_surface,medium_rectangle)
-    screen.blit(hard_surface,hard_rectangle)
-
+    screen.blit(easy_surface, easy_rectangle)
+    screen.blit(medium_surface, medium_rectangle)
+    screen.blit(hard_surface, hard_rectangle)
 
     while True:
         for event in pygame.event.get():
@@ -84,46 +79,45 @@ def draw_game_start(screen):
                     return 50
         pygame.display.update()
 
-def draw_game_play(screen, Difficulty):
+
+def draw_game_play(screen, difficulty):
     # Set background color
     screen.fill(TITLE_BACKGROUND)
-    p = sudoku_generator.generate_sudoku(9, Difficulty)
+    p = sudoku_generator.generate_sudoku(9, difficulty)
     # Font Size
     button_font = pygame.font.Font(None, 25)
 
     # Text
-    reset_text = button_font.render("Reset",0,BLACK)
-    restart_text = button_font.render("Restart", 0,BLACK)
-    exit_text = button_font.render("Exit", 0,BLACK)
+    reset_text = button_font.render("Reset", 0, BLACK)
+    restart_text = button_font.render("Restart", 0, BLACK)
+    exit_text = button_font.render("Exit", 0, BLACK)
 
     # Reset Surface
     reset_surface = pygame.Surface((reset_text.get_size()[0]+20, restart_text.get_size()[0]-15))
     reset_surface.fill(BUTTON_COLOR)
-    reset_surface.blit(reset_text, (10,10))
+    reset_surface.blit(reset_text, (10, 10))
 
     # Reset Button
     reset_rect = reset_surface.get_rect(center=[SCREEN_WIDTH // 2-250, SCREEN_HEIGHT // 2 + 325])
-    screen.blit(reset_surface,reset_rect)
+    screen.blit(reset_surface, reset_rect)
 
     # Restart Surface
     restart_surface = pygame.Surface((restart_text.get_size()[0]+20, restart_text.get_size()[0]-15))
     restart_surface.fill(BUTTON_COLOR)
-    restart_surface.blit(restart_text, (10,10))
+    restart_surface.blit(restart_text, (10, 10))
 
     # Restart Button
     restart_rect = restart_surface.get_rect(center=[SCREEN_WIDTH // 2-150, SCREEN_HEIGHT // 2 + 325])
-    screen.blit(restart_surface,restart_rect)
+    screen.blit(restart_surface, restart_rect)
 
     # Exit Surface
     exit_surface = pygame.Surface((exit_text.get_size()[0]+20, exit_text.get_size()[0]+10))
     exit_surface.fill(BUTTON_COLOR)
-    exit_surface.blit(exit_text,(10,10))
+    exit_surface.blit(exit_text, (10, 10))
 
     # Exit Button
     exit_rect = exit_surface.get_rect(center=[SCREEN_WIDTH // 2-50, SCREEN_HEIGHT // 2 + 325])
-    screen.blit(exit_surface,exit_rect)
-
-
+    screen.blit(exit_surface, exit_rect)
 
     while True:
         for event in pygame.event.get():
@@ -141,6 +135,7 @@ def draw_game_play(screen, Difficulty):
 
         pygame.display.update()
 
+
 def draw_game_won(screen):
     # Set background color
     screen.fill(TITLE_BACKGROUND)
@@ -156,9 +151,9 @@ def draw_game_won(screen):
     # Restart Button
     exit_surface = pygame.Surface((exit_text.get_size()[0]+20, exit_text.get_size()[0]))
     exit_surface.fill(BUTTON_COLOR)
-    exit_surface.blit(exit_text, (10,10))
+    exit_surface.blit(exit_text, (10, 10))
     # Button Rectangle
-    exit_rect = exit_surface.get_rect(center=[SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 +100])
+    exit_rect = exit_surface.get_rect(center=[SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 + 100])
     screen.blit(exit_surface, exit_rect)
 
     while True:
@@ -172,6 +167,7 @@ def draw_game_won(screen):
                     sys.exit()
         pygame.display.update()
 
+
 def draw_game_lost(screen):
     # Set background color
     screen.fill(TITLE_BACKGROUND)
@@ -179,8 +175,8 @@ def draw_game_lost(screen):
     game_lost_font = pygame.font.Font(None, 50)
     restart_font = pygame.font.Font(None, 30)
     # Text
-    game_lost_surface = game_lost_font.render("Game Over :/",0,BLACK)
-    game_lost_rect = game_lost_surface.get_rect(center=[SCREEN_WIDTH//2, SCREEN_HEIGHT//2 -50])
+    game_lost_surface = game_lost_font.render("Game Over :/", 0, BLACK)
+    game_lost_rect = game_lost_surface.get_rect(center=[SCREEN_WIDTH//2, SCREEN_HEIGHT//2 - 50])
     screen.blit(game_lost_surface, game_lost_rect)
     # Restart Text
     restart_text = restart_font.render("Restart", 0, BLACK)
@@ -202,26 +198,52 @@ def draw_game_lost(screen):
                     return
         pygame.display.update()
 
+
 def main():
-    pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     pygame.display.set_caption("Sudoku")
 
-    DIFFICULTY = draw_game_start(screen)
+    difficulty = draw_game_start(screen)
+    board = Board(450, 450, screen, difficulty)
 
-    draw_game_play(screen,DIFFICULTY)
+    running = True
+    while running:
+        screen.fill(WHITE)
 
-    draw_game_lost(screen)
+        for event in pygame.event.get():
+            # pygame.display.update()
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                pos = event.pos
+                cell_size = SCREEN_WIDTH // 9
+                row = pos[1] // cell_size
+                col = pos[0] // cell_size
+                board.select(row, col)
+            elif event.type == pygame.KEYDOWN:
+                if board and board.selected_cell:
+                    if event.key == pygame.K_1:
+                        board.place_number(1)
+                    if event.key == pygame.K_2:
+                        board.place_number(2)
+                    if event.key == pygame.K_3:
+                        board.place_number(3)
+                    if event.key == pygame.K_4:
+                        board.place_number(4)
+                    if event.key == pygame.K_5:
+                        board.place_number(5)
+                    if event.key == pygame.K_6:
+                        board.place_number(6)
+                    if event.key == pygame.K_7:
+                        board.place_number(7)
+                    if event.key == pygame.K_8:
+                        board.place_number(8)
+                    if event.key == pygame.K_9:
+                        board.place_number(9)
 
-    draw_game_won(screen)
-
-
-
-
-
-
-
-
+        board.draw()
+        pygame.display.flip()
 
 
 if __name__ == "__main__":
