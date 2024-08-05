@@ -1,10 +1,10 @@
-# This is where the main function will be run
+# This was implemented into sudoku.py
 import pygame
 import sys
 
 import sudoku_generator
 from sudoku_generator import *
-from board import *
+from cell_and_board_class import *
 
 
 
