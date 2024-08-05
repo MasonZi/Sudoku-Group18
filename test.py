@@ -4,7 +4,7 @@ import sys
 
 import sudoku_generator
 from sudoku_generator import *
-from board import *
+from cell_and_board_class import *
 
 
 
