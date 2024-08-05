@@ -55,16 +55,46 @@ class Board:
 
     def draw(self):
         cell_size = 50
-        for i in range(10):
+        num_cells = 9  # Assuming a 9x9 grid
+
+        # Dimensions of window
+        window_width = 600
+        window_height = 600
+
+        # Calculate the total grid size
+        grid_width = num_cells * cell_size
+        grid_height = num_cells * cell_size
+
+        # Calculate the offset to center the grid
+        x_offset = (window_width - grid_width) // 2
+        y_offset = (window_height - grid_height) // 2
+
+        # Draw grid lines
+        for i in range(num_cells + 1):  # Include the last line
             if i % 3 == 0:
                 line_width = 5  # Every third line is drawn thicker
             else:
                 line_width = 1
-            # Draw horizontal lines
-            pygame.draw.line(self.screen, BLACK, (0, i * cell_size), (self.width, i * cell_size), line_width)
-            # Draw vertical lines
-            pygame.draw.line(self.screen, BLACK, (i * cell_size, 0), (i * cell_size, self.height), line_width)
 
+            # Draw horizontal lines
+            pygame.draw.line(
+                self.screen,
+                BLACK,
+                (x_offset, y_offset + i * cell_size),
+                (x_offset + grid_width, y_offset + i * cell_size),
+                line_width
+            )
+
+            # Draw vertical lines
+            pygame.draw.line(
+                self.screen,
+                BLACK,
+                (x_offset + i * cell_size, y_offset),
+                (x_offset + i * cell_size, y_offset + grid_height),
+                line_width
+            )
+
+        # Draw cells
         for row in self.cells:
             for cell in row:
                 cell.draw()
