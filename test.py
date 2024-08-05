@@ -1,10 +1,10 @@
-# This was implemented into sudoku.py
+# This is where the main function will be run
 import pygame
 import sys
 
 import sudoku_generator
 from sudoku_generator import *
-from cell_and_board_class import *
+from board import *
 
 
 
@@ -31,7 +31,7 @@ def draw_game_start(screen):
     # Color background
     screen.fill(TITLE_BACKGROUND)
 
-    # Initialze and draw title and difficulty words
+    # Initialize and draw title and difficulty words
     sudoku_title = title_font.render("Welcome to Sudoku", 0, BLACK)
     sudoku_rectangle = sudoku_title.get_rect(center=(SCREEN_WIDTH//2, SCREEN_HEIGHT//2 - 200))
     screen.blit(sudoku_title, sudoku_rectangle)
@@ -47,15 +47,15 @@ def draw_game_start(screen):
 
     # Button Background color and text
 
-    easy_surface = pygame.Surface((easy_text.get_size()[0]+20, easy_text.get_size()[0]+30))
+    easy_surface = pygame.Surface((easy_text.get_size()[0]+20, easy_text.get_size()[0]))
     easy_surface.fill(BUTTON_COLOR)
     easy_surface.blit(easy_text, (10, 10))
 
-    medium_surface = pygame.Surface((medium_text.get_size()[0]+20, medium_text.get_size()[0]))
+    medium_surface = pygame.Surface((medium_text.get_size()[0]+20, medium_text.get_size()[0]-30))
     medium_surface.fill(BUTTON_COLOR)
     medium_surface.blit(medium_text, (10,10))
 
-    hard_surface = pygame.Surface((hard_text.get_size()[0]+20, hard_text.get_size()[0]+30))
+    hard_surface = pygame.Surface((hard_text.get_size()[0]+20, hard_text.get_size()[0]))
     hard_surface.fill(BUTTON_COLOR)
     hard_surface.blit(hard_text, (10,10))
 
@@ -89,7 +89,7 @@ def draw_game_play(screen, Difficulty):
     screen.fill(TITLE_BACKGROUND)
     p = sudoku_generator.generate_sudoku(9, Difficulty)
     # Font Size
-    button_font = pygame.font.Font(None, 20)
+    button_font = pygame.font.Font(None, 25)
 
     # Text
     reset_text = button_font.render("Reset",0,BLACK)
@@ -97,7 +97,7 @@ def draw_game_play(screen, Difficulty):
     exit_text = button_font.render("Exit", 0,BLACK)
 
     # Reset Surface
-    reset_surface = pygame.Surface((reset_text.get_size()[0]+20, restart_text.get_size()[0]))
+    reset_surface = pygame.Surface((reset_text.get_size()[0]+20, restart_text.get_size()[0]-15))
     reset_surface.fill(BUTTON_COLOR)
     reset_surface.blit(reset_text, (10,10))
 
@@ -106,7 +106,7 @@ def draw_game_play(screen, Difficulty):
     screen.blit(reset_surface,reset_rect)
 
     # Restart Surface
-    restart_surface = pygame.Surface((restart_text.get_size()[0]+20, restart_text.get_size()[0]))
+    restart_surface = pygame.Surface((restart_text.get_size()[0]+20, restart_text.get_size()[0]-15))
     restart_surface.fill(BUTTON_COLOR)
     restart_surface.blit(restart_text, (10,10))
 
@@ -115,7 +115,7 @@ def draw_game_play(screen, Difficulty):
     screen.blit(restart_surface,restart_rect)
 
     # Exit Surface
-    exit_surface = pygame.Surface((exit_text.get_size()[0]+20, exit_text.get_size()[0]+20))
+    exit_surface = pygame.Surface((exit_text.get_size()[0]+20, exit_text.get_size()[0]+10))
     exit_surface.fill(BUTTON_COLOR)
     exit_surface.blit(exit_text,(10,10))
 
@@ -185,7 +185,7 @@ def draw_game_lost(screen):
     # Restart Text
     restart_text = restart_font.render("Restart", 0, BLACK)
     # Restart Button
-    restart_surface = pygame.Surface((restart_text.get_size()[0] + 20, restart_text.get_size()[0]))
+    restart_surface = pygame.Surface((restart_text.get_size()[0] + 20, restart_text.get_size()[0]-30))
     restart_surface.fill(BUTTON_COLOR)
     restart_surface.blit(restart_text, (10, 10))
     # Button Rectangle
@@ -208,9 +208,13 @@ def main():
     pygame.display.set_caption("Sudoku")
 
     DIFFICULTY = draw_game_start(screen)
+
     draw_game_play(screen,DIFFICULTY)
-    draw_game_won(screen)
+
     draw_game_lost(screen)
+
+    draw_game_won(screen)
+
 
 
 
