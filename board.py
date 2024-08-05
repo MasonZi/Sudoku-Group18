@@ -13,13 +13,12 @@ class Board:
         self.difficulty = difficulty
 
         # Create 9x9 grid of cells
-        self.cells = [Cell(0, row, col, screen) for col in range(height) for row in range(width)]
+        self.cells = [Cell(0, row, col, screen) for col in range(9) for row in range(9)]
         self.selected_cell = None
         self.board = self.generate_board()
 
     def draw(self):
         cell_size = 50
-
         for i in range(10):
             if i % 3 == 0:
                 line_width = 5  # Every third line is drawn thicker
@@ -35,6 +34,8 @@ class Board:
                 cell.draw()
 
     def select(self, row, col):
+        if self.selected_cell is not None:
+            self.selected_cell.selected = False
         self.selected_cell = self.cells[row][col]
         self.cells[row][col].selected = True
 
@@ -85,3 +86,11 @@ class Board:
 
     def check_board(self):
         return
+
+    def generate_board(self):
+        removed_cells = get_removed_cells(self.difficulty)
+        board_values = generate_sudoku(9, removed_cells)
+        for row in range(9):
+            for col in range(9):
+                self.cells[row][col].set_cell_value(board_values[row][col])
+        return board_values
