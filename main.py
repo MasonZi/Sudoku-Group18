@@ -197,7 +197,7 @@ def draw_game_lost(screen):
                 sys.exit()
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if restart_rect.collidepoint(event.pos):
-                    return
+                    return False
         pygame.display.update()
 
 
@@ -283,7 +283,9 @@ def main():
                             if board.is_full() and board.check_board():
                                 draw_game_won(screen)
                         else:
-                            draw_game_lost(screen)
+                            if draw_game_lost(screen) == False:
+                                difficulty = draw_game_start(screen)
+                                board = Board(500, 500, screen, difficulty)
                     if event.key == pygame.K_BACKSPACE:
                         board.clear()
 
