@@ -11,7 +11,8 @@ SCREEN_HEIGHT = 560
 TITLE_BACKGROUND = (220, 220, 220)
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
-BUTTON_COLOR = (100, 100, 100)
+BUTTON_COLOR = (130, 130, 130)
+game_display = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
 # Variable
 DIFFICULTY = 0
@@ -25,13 +26,17 @@ def draw_game_start(screen):
 
     # Color background
     screen.fill(TITLE_BACKGROUND)
+    bg_image = pygame.image.load('sudoku.jpg')
+    game_display.blit(bg_image, (0, 0))
+    pygame.display.update()
+
 
     # Initialize and draw title and difficulty words
     sudoku_title = title_font.render("Welcome to Sudoku!", 0, BLACK)
-    sudoku_rectangle = sudoku_title.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 - 200))
+    sudoku_rectangle = sudoku_title.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 - 150))
     screen.blit(sudoku_title, sudoku_rectangle)
 
-    difficulty_text = difficulty_font.render("Select A Game Mode:", 0, BLACK)
+    difficulty_text = difficulty_font.render("Select a Game Mode:", 0, BLACK)
     difficulty_rectangle = difficulty_text.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2,))
     screen.blit(difficulty_text, difficulty_rectangle)
 
@@ -200,6 +205,7 @@ def main():
 
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     pygame.display.set_caption("Sudoku")
+
 
     # Show difficulty selection screen
     difficulty = draw_game_start(screen)
