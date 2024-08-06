@@ -6,7 +6,7 @@ from cell_and_board_class import *
 
 pygame.init()
 # Constants
-SCREEN_WIDTH = 451
+SCREEN_WIDTH = 450
 SCREEN_HEIGHT = 560
 TITLE_BACKGROUND = (220, 220, 220)
 WHITE = (255, 255, 255)
@@ -198,7 +198,6 @@ def draw_game_lost(screen):
 
 
 def main():
-    """ Main function to set up the game window, handle events, and update the game state """
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     pygame.display.set_caption("Sudoku")
 
