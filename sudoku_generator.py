@@ -43,14 +43,16 @@ class SudokuGenerator:
                 self.valid_in_box(row - row % 3, col - col % 3, num))
 
     def fill_box(self, row_start, col_start):
-        nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-        random.shuffle(nums)
-        for i in range(row_start, row_start + self.box_length):
-            for j in range(col_start, col_start + self.box_length):
-                self.board[i][j] = nums.pop()
+        single_digits = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        random.shuffle(single_digits)
+        index_digit = 0
+        for row in range(row_start, row_start + self.box_length):
+            for col in range(col_start, col_start + self.box_length):
+                self.board[row][col] = single_digits[index_digit]
+                index_digit += 1
 
     def fill_diagonal(self):
-        for i in [0, 3, 6]:
+        for i in range(0, self.row_length, self.box_length):
             self.fill_box(i, i)
 
     def fill_remaining(self, row, col):  # Do not change

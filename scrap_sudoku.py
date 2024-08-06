@@ -142,7 +142,7 @@ def main():
     pygame.display.set_caption("Sudoku")
 
     difficulty = draw_game_start(screen)
-    board = Board(450, 450, screen, difficulty)
+    board = Board(550, 550, screen, difficulty)
 
     running = True
     while running:

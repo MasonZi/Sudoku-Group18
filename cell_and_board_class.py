@@ -92,6 +92,7 @@ class Board:
         for row in self.cells:
             for cell in row:
                 cell.draw()
+
     def select(self, row, col):
         if self.selected_cell is not None:
             self.selected_cell.selected = False
@@ -116,10 +117,11 @@ class Board:
             self.selected_cell.set_cell_value(value)
 
     def reset_to_original(self):
-        for row in self.cells:
-            for cell in row:
-                cell.value = 0
-                cell.sketched_value = None
+        self.board = self.generate_board()
+        for row in range(9):
+            for col in range(9):
+                self.cells[row][col].set_cell_value(self.board[row][col])
+                self.cells[row][col].set_sketched_value(None)
 
     def is_full(self):
         for row in self.cells:
