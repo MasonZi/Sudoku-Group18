@@ -53,6 +53,7 @@ class Board:
         self.selected_cell = None
         self.board = self.generate_board()
 
+
     def draw(self):
         cell_size = 50
         num_cells = 9
@@ -117,11 +118,16 @@ class Board:
             self.selected_cell.set_cell_value(value)
 
     def reset_to_original(self):
-        self.board = self.generate_board()
         for row in range(9):
             for col in range(9):
+                # Restore the original value
                 self.cells[row][col].set_cell_value(self.board[row][col])
+                # Clear any sketched value
                 self.cells[row][col].set_sketched_value(None)
+            # Deselect any selected cell
+        if self.selected_cell is not None:
+            self.selected_cell.selected = False
+        self.selected_cell = None
 
     def is_full(self):
         for row in self.cells:
