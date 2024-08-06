@@ -284,12 +284,13 @@ def main():
                         board.sketch(9)
                     if event.key == pygame.K_RETURN or event.key == pygame.K_KP_ENTER:
                         if board.place_number(num_place):
-                            if board.is_full() and board.check_board():
-                                draw_game_won(screen)
-                            elif board.is_full() == True and board.check_board() == False:
-                                if draw_game_lost(screen) == False:
-                                    difficulty = draw_game_start(screen)
-                                    board = Board(500, 500, screen, difficulty)
+                            nice = nice
+                        if board.is_full() and board.check_board():
+                            draw_game_won(screen)
+                        elif board.is_full() == True and board.check_board() == False:
+                            if draw_game_lost(screen) == False:
+                                difficulty = draw_game_start(screen)
+                                board = Board(500, 500, screen, difficulty)
                     if event.key == pygame.K_BACKSPACE:
                         board.clear()
                     try:
