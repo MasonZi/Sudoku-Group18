@@ -10,6 +10,7 @@ SCREEN_WIDTH = 450
 SCREEN_HEIGHT = 560
 TITLE_BACKGROUND = (220, 220, 220)
 WHITE = (255, 255, 255)
+GREY = (245, 245, 245)
 BLACK = (0, 0, 0)
 BUTTON_COLOR = (130, 130, 130)
 game_display = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -230,7 +231,7 @@ def main():
 
     running = True
     while running:
-        screen.fill(WHITE)
+        screen.fill(GREY)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -285,7 +286,7 @@ def main():
                     if event.key == pygame.K_RETURN or event.key == pygame.K_KP_ENTER:
                         if board.place_number(num_place):
                             nice = nice
-                        if board.is_full() and board.check_board():
+                        if board.is_full() == True and board.check_board() == True:
                             draw_game_won(screen)
                         elif board.is_full() == True and board.check_board() == False:
                             if draw_game_lost(screen) == False:

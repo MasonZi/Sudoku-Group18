@@ -52,6 +52,8 @@ class Board:
         self.cells = [[Cell(0, row, col, screen) for col in range(9)] for row in range(9)]
         self.selected_cell = None
         self.board = self.generate_board()
+        self.grid = [[Cell(x * (width // 9), y * (height // 9), width // 9, height // 9)
+                      for x in range(9)] for y in range(9)]
 
     def draw(self):
         cell_size = 50
@@ -150,36 +152,41 @@ class Board:
         return None
 
     def check_board(self):
-        if not self.is_full():
-            return False
+        def is_valid(board):
+            def has_duplicates(sequence):
+                """Helper function to check if a sequence (list) contains duplicates."""
+                seen = set()
+                for num in sequence:
+                    if num != 0:
+                        if num in seen:
+                            return True
+                        seen.add(num)
+                return False
 
-        if not self.is_valid():
-            return False
+            # Check all rows
+            for row in board:
+                if has_duplicates([cell.value for cell in row]):
+                    return False
 
-        return True
+            # Check all columns
+            for col in range(9):
+                column_values = [board[row][col].value for row in range(9)]
+                if has_duplicates(column_values):
+                    return False
 
-    # def is_valid(self):
-    #     def is_unique(lst):
-    #         nums = [num for num in lst if num != 0]
-    #         return len(nums) == len(set(nums))
-    #
-    #     for row in self.board:
-    #         if not is_unique(row):
-    #             return False
-    #
-    #     for col in range(9):
-    #         if not is_unique([self.board[row][col] for row in range(9)]):
-    #             return False
-    #
-    #     for box_row in range(0, 9, 3):
-    #         for box_col in range(0, 9, 3):
-    #             sub_grid = [self.board[row][col]
-    #                         for row in range(box_row, box_row + 3)
-    #                         for col in range(box_col, box_col + 3)]
-    #             if not is_unique(sub_grid):
-    #                 return False
-    #
-    #     return True
+            # Check all 3x3 sub-grids
+            for box_y in range(0, 9, 3):
+                for box_x in range(0, 9, 3):
+                    box_values = [board[y][x].value for y in range(box_y, box_y + 3)
+                                  for x in range(box_x, box_x + 3)]
+                    if has_duplicates(box_values):
+                        return False
+
+            return True
+
+        return is_valid(self.grid)
+
+
 
     def generate_board(self):
         removed_cells = self.difficulty
