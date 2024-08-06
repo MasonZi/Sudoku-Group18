@@ -197,6 +197,7 @@ def draw_game_lost(screen):
 
 
 def main():
+
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     pygame.display.set_caption("Sudoku")
 
@@ -245,23 +246,34 @@ def main():
             elif event.type == pygame.KEYDOWN:
                 if board.selected_cell:
                     if event.key == pygame.K_1:
-                        board.place_number(1)
+                        num_place = 1
+                        board.sketch(1)
                     if event.key == pygame.K_2:
-                        board.place_number(2)
+                        num_place = 2
+                        board.sketch(2)
                     if event.key == pygame.K_3:
-                        board.place_number(3)
+                        num_place = 3
+                        board.sketch(3)
                     if event.key == pygame.K_4:
-                        board.place_number(4)
+                        num_place = 4
+                        board.sketch(4)
                     if event.key == pygame.K_5:
-                        board.place_number(5)
+                        num_place = 5
+                        board.sketch(5)
                     if event.key == pygame.K_6:
-                        board.place_number(6)
+                        num_place = 6
+                        board.sketch(6)
                     if event.key == pygame.K_7:
-                        board.place_number(7)
+                        num_place = 7
+                        board.sketch(7)
                     if event.key == pygame.K_8:
-                        board.place_number(8)
+                        num_place = 8
+                        board.sketch(8)
                     if event.key == pygame.K_9:
-                        board.place_number(9)
+                        num_place = 9
+                        board.sketch(9)
+                    if event.key == pygame.K_RETURN:
+                        board.place_number(num_place)
 
         # Draw the board and buttons
         board.draw()
