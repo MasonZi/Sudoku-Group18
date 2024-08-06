@@ -231,15 +231,17 @@ def main():
                 if 50 <= pos[0] <= 550 and 50 <= pos[1] <= 550:
                     row = (pos[1] - 50) // 50
                     col = (pos[0] - 50) // 50
-                    board.select(row, col)
-                elif reset_rect.collidepoint(pos):
-                    board.reset_to_original()
-                elif restart_rect.collidepoint(pos):
-                    difficulty = draw_game_start(screen)
-                    board = Board(500, 500, screen, difficulty)
-                elif exit_rect.collidepoint(pos):
-                    pygame.quit()
-                    sys.exit()
+                    try:
+                        board.select(row, col)
+                    except:
+                        if reset_rect.collidepoint(pos):
+                            board.reset_to_original()
+                        elif restart_rect.collidepoint(pos):
+                            difficulty = draw_game_start(screen)
+                            board = Board(500, 500, screen, difficulty)
+                        elif exit_rect.collidepoint(pos):
+                            pygame.quit()
+                            sys.exit()
             elif event.type == pygame.KEYDOWN:
                 if board.selected_cell:
                     if event.key == pygame.K_1:
