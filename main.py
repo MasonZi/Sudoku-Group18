@@ -251,41 +251,41 @@ def main():
                             sys.exit()
             elif event.type == pygame.KEYDOWN:
                 if board.selected_cell:
-                    if event.key == pygame.K_1:
+                    if event.key == pygame.K_1 or event.key == pygame.K_KP_1:
                         num_place = 1
                         board.sketch(1)
-                    if event.key == pygame.K_2:
+                    if event.key == pygame.K_2 or event.key == pygame.K_KP_2:
                         num_place = 2
                         board.sketch(2)
-                    if event.key == pygame.K_3:
+                    if event.key == pygame.K_3 or event.key == pygame.K_KP_3:
                         num_place = 3
                         board.sketch(3)
-                    if event.key == pygame.K_4:
+                    if event.key == pygame.K_4 or event.key == pygame.K_KP_4:
                         num_place = 4
                         board.sketch(4)
-                    if event.key == pygame.K_5:
+                    if event.key == pygame.K_5 or event.key == pygame.K_KP_5:
                         num_place = 5
                         board.sketch(5)
-                    if event.key == pygame.K_6:
+                    if event.key == pygame.K_6 or event.key == pygame.K_KP_6:
                         num_place = 6
                         board.sketch(6)
-                    if event.key == pygame.K_7:
+                    if event.key == pygame.K_7 or event.key == pygame.K_KP_7:
                         num_place = 7
                         board.sketch(7)
-                    if event.key == pygame.K_8:
+                    if event.key == pygame.K_8 or event.key == pygame.K_KP_8:
                         num_place = 8
                         board.sketch(8)
-                    if event.key == pygame.K_9:
+                    if event.key == pygame.K_9 or event.key == pygame.K_KP_9:
                         num_place = 9
                         board.sketch(9)
-                    if event.key == pygame.K_RETURN:
+                    if event.key == pygame.K_RETURN or event.key == pygame.K_KP_ENTER:
                         if board.place_number(num_place):
                             if board.is_full() and board.check_board():
                                 draw_game_won(screen)
-                        else:
-                            if draw_game_lost(screen) == False:
-                                difficulty = draw_game_start(screen)
-                                board = Board(500, 500, screen, difficulty)
+                            elif board.is_full() == True and board.check_board() == False:
+                                if draw_game_lost(screen) == False:
+                                    difficulty = draw_game_start(screen)
+                                    board = Board(500, 500, screen, difficulty)
                     if event.key == pygame.K_BACKSPACE:
                         board.clear()
 
