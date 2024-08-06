@@ -141,6 +141,8 @@ def draw_game_play(screen, difficulty):
 def draw_game_won(screen):
     # Set background color
     screen.fill(TITLE_BACKGROUND)
+    bg_image = pygame.image.load('sudoku.jpg')
+    game_display.blit(bg_image, (0, 0))
     # Font Size
     game_won_font = pygame.font.Font(None, 50)
     exit_font = pygame.font.Font(None, 30)
@@ -173,6 +175,8 @@ def draw_game_won(screen):
 def draw_game_lost(screen):
     # Set background color
     screen.fill(TITLE_BACKGROUND)
+    bg_image = pygame.image.load('sudoku.jpg')
+    game_display.blit(bg_image, (0, 0))
     # Font Size
     game_lost_font = pygame.font.Font(None, 50)
     restart_font = pygame.font.Font(None, 30)
@@ -288,6 +292,22 @@ def main():
                                     board = Board(500, 500, screen, difficulty)
                     if event.key == pygame.K_BACKSPACE:
                         board.clear()
+                    try:
+                        if event.key == pygame.K_UP:
+                            board.select(row-1,col)
+                            row -= 1
+                        elif event.key == pygame.K_DOWN:
+                            board.select(row+1, col)
+                            row += 1
+                        elif event.key == pygame.K_LEFT:
+                            board.select(row, col-1)
+                            col -= 1
+                        elif event.key == pygame.K_RIGHT:
+                            board.select(row, col+1)
+                            col += 1
+
+                    except:
+                        board.select(row,col)
 
         # Draw the board and buttons
         board.draw()
