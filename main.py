@@ -41,9 +41,9 @@ def draw_game_start(screen):
     screen.blit(difficulty_text, difficulty_rectangle)
 
     # Initialize Button Text
-    easy_text = button_font.render("Easy", 0, BLACK)
-    medium_text = button_font.render("Medium", 0, BLACK)
-    hard_text = button_font.render("Hard", 0, BLACK)
+    easy_text = button_font.render("Easy", 0, WHITE)
+    medium_text = button_font.render("Medium", 0, WHITE)
+    hard_text = button_font.render("Hard", 0, WHITE)
 
     # Button Background color and text
     easy_surface = pygame.Surface((easy_text.get_size()[0] + 20, easy_text.get_size()[0]))
