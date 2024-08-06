@@ -81,7 +81,6 @@ def draw_game_start(screen):
 def draw_game_play(screen, difficulty):
     # Set background color
     screen.fill(TITLE_BACKGROUND)
-    p = sudoku_generator.generate_sudoku(9, difficulty)
     # Font Size
     button_font = pygame.font.Font(None, 25)
 

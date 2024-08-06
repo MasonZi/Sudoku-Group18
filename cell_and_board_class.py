@@ -149,7 +149,7 @@ class Board:
         return
 
     def generate_board(self):
-        removed_cells = get_removed_cells(self.difficulty)
+        removed_cells = self.difficulty
         board_values = generate_sudoku(9, removed_cells)
         for row in range(9):
             for col in range(9):
