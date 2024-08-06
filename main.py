@@ -274,6 +274,8 @@ def main():
                         board.sketch(9)
                     if event.key == pygame.K_RETURN:
                         board.place_number(num_place)
+                        if board.is_full() and board.check_board():
+                            draw_game_won(screen)
                     if event.key == pygame.K_BACKSPACE:
                         board.clear()
 
