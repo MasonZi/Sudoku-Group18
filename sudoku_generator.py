@@ -44,7 +44,7 @@ class SudokuGenerator:
 
     def fill_box(self, row_start, col_start):
         single_digits = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-        random.shuffle(single_digits) #suffle digits 1-9
+        random.shuffle(single_digits)  # Shuffle digits 1-9
 
         index_digit = 0
         for row in range(row_start, row_start + self.box_length):
@@ -96,6 +96,7 @@ class SudokuGenerator:
             if self.board[row][col] != 0:
                 self.board[row][col] = 0
 
+
 '''
 DO NOT CHANGE
 Provided for students
@@ -111,6 +112,8 @@ removed is the number of cells to clear (set to 0)
 
 Return: list[list] (a 2D Python list to represent the board)
 '''
+
+
 def generate_sudoku(size, removed):
     sudoku = SudokuGenerator(size, removed)
     sudoku.fill_values()

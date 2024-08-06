@@ -53,7 +53,6 @@ class Board:
         self.selected_cell = None
         self.board = self.generate_board()
 
-
     def draw(self):
         cell_size = 50
         num_cells = 9
@@ -108,7 +107,6 @@ class Board:
         if self.selected_cell is not None:
             self.selected_cell.set_cell_value(0)
 
-
     def sketch(self, value):
         if self.selected_cell is not None:
             self.selected_cell.set_sketched_value(value)
@@ -116,14 +114,6 @@ class Board:
     def place_number(self, value):
         if self.selected_cell is not None:
             self.selected_cell.set_cell_value(value)
-
-    # def place_number(self, value):
-    #     if self.selected_cell is not None:
-    #         row = self.selected_cell.row
-    #         col = self.selected_cell.col
-    #         if self.is_valid(row, col, value):
-    #             self.selected_cell.set_cell_value(value)
-    #             self.selected_cell.set_sketched_value(None)  # Clear the sketched value
 
     def reset_to_original(self):
         for row in range(9):
