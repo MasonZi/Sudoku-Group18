@@ -8,7 +8,7 @@ class SudokuGenerator:
     def __init__(self, row_length, removed_cells):
         self.row_length = row_length
         self.removed_cells = removed_cells
-        self.board = [[0] * self.row_length for i in range(self.row_length)]
+        self.board = [[0 for _ in range(row_length)] for _ in range(row_length)]
         self.box_length = int(math.sqrt(self.row_length))
 
     def get_board(self):
@@ -20,9 +20,9 @@ class SudokuGenerator:
 
     def valid_in_row(self, row, num):
         if num in self.board[row]:
-            return True
-        else:
             return False
+        else:
+            return True
 
     def valid_in_col(self, col, num):
         for row in range(self.row_length):
@@ -44,7 +44,8 @@ class SudokuGenerator:
 
     def fill_box(self, row_start, col_start):
         single_digits = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-        random.shuffle(single_digits)
+        random.shuffle(single_digits) #suffle digits 1-9
+
         index_digit = 0
         for row in range(row_start, row_start + self.box_length):
             for col in range(col_start, col_start + self.box_length):
@@ -92,7 +93,8 @@ class SudokuGenerator:
 
         cells_to_remove = cells[:self.removed_cells]
         for (row, col) in cells_to_remove:
-            self.board[row][col] = 0
+            if self.board[row][col] != 0:
+                self.board[row][col] = 0
 
 '''
 DO NOT CHANGE
