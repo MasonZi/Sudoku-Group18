@@ -1,16 +1,14 @@
-# Group 18
 import pygame
 from sudoku_generator import generate_sudoku
 
-# Constants
-
+# Initialize Pygame
 pygame.init()
 
+# Constants
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 BUTTON_COLOR = (100, 100, 100)
 FONT = pygame.font.SysFont(None, 30)
-
 
 class Cell:
     def __init__(self, value, row, col, screen):
@@ -181,15 +179,13 @@ class Board:
     def get_removed_cells(difficulty):
         # Define how many cells to remove based on difficulty
         if difficulty == 'easy':
-            return 30
+            return 20
         elif difficulty == 'medium':
             return 40
         elif difficulty == 'hard':
-            return 50
+            return 60
         else:
-            return 30
-
-
+            return 20  # Default value
 
     def generate_board(self):
         removed_cells = self.get_removed_cells(self.difficulty)  # Use difficulty to determine removed cells
@@ -198,6 +194,3 @@ class Board:
             for col in range(9):
                 self.cells[row][col].set_cell_value(board_values[row][col])
         return board_values
-
-
-
