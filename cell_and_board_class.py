@@ -107,7 +107,7 @@ class Board:
     def clear(self):
         if self.selected_cell is not None:
             self.selected_cell.set_cell_value(0)
-            self.selected_cell = None
+
 
     def sketch(self, value):
         if self.selected_cell is not None:

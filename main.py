@@ -274,6 +274,8 @@ def main():
                         board.sketch(9)
                     if event.key == pygame.K_RETURN:
                         board.place_number(num_place)
+                    if event.key == pygame.K_BACKSPACE:
+                        board.clear()
 
         # Draw the board and buttons
         board.draw()
