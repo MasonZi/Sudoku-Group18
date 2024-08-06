@@ -158,28 +158,28 @@ class Board:
 
         return True
 
-    def is_valid(self):
-        def is_unique(lst):
-            nums = [num for num in lst if num != 0]
-            return len(nums) == len(set(nums))
-
-        for row in self.board:
-            if not is_unique(row):
-                return False
-
-        for col in range(9):
-            if not is_unique([self.board[row][col] for row in range(9)]):
-                return False
-
-        for box_row in range(0, 9, 3):
-            for box_col in range(0, 9, 3):
-                sub_grid = [self.board[row][col]
-                            for row in range(box_row, box_row + 3)
-                            for col in range(box_col, box_col + 3)]
-                if not is_unique(sub_grid):
-                    return False
-
-        return True
+    # def is_valid(self):
+    #     def is_unique(lst):
+    #         nums = [num for num in lst if num != 0]
+    #         return len(nums) == len(set(nums))
+    #
+    #     for row in self.board:
+    #         if not is_unique(row):
+    #             return False
+    #
+    #     for col in range(9):
+    #         if not is_unique([self.board[row][col] for row in range(9)]):
+    #             return False
+    #
+    #     for box_row in range(0, 9, 3):
+    #         for box_col in range(0, 9, 3):
+    #             sub_grid = [self.board[row][col]
+    #                         for row in range(box_row, box_row + 3)
+    #                         for col in range(box_col, box_col + 3)]
+    #             if not is_unique(sub_grid):
+    #                 return False
+    #
+    #     return True
 
     def generate_board(self):
         removed_cells = self.difficulty
