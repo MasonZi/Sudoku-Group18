@@ -228,9 +228,9 @@ def main():
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 pos = event.pos
                 # Check if the click is within the board area
-                if 50 <= pos[0] <= 550 and 50 <= pos[1] <= 550:
-                    row = (pos[1] - 50) // 50
-                    col = (pos[0] - 50) // 50
+                if 0 <= pos[0] <= 550 and 0 <= pos[1] <= 550:
+                    row = (pos[1]) // 50
+                    col = (pos[0]) // 50
                     try:
                         board.select(row, col)
                     except:
