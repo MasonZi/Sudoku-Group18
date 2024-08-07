@@ -1,4 +1,4 @@
-# Group 18
+# Group 18 Sudoku
 import pygame
 from sudoku_generator import *
 from main import *
