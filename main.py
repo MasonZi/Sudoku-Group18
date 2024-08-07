@@ -286,7 +286,7 @@ def main():
                     if event.key == pygame.K_RETURN or event.key == pygame.K_KP_ENTER:
                         if board.place_number(num_place):
                             nice = nice
-                        if board.is_full() == True and board.check_board() == True:
+                        if board.is_full() == True and board.check_board():
                             draw_game_won(screen)
                         elif board.is_full() == True and board.check_board() == False:
                             if draw_game_lost(screen) == False:
