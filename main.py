@@ -80,7 +80,59 @@ def draw_game_start(screen):
                     return 'hard'
         pygame.display.update()
 
+def draw_game_play(screen, difficulty):
+    # Set background color
+    screen.fill(TITLE_BACKGROUND)
+    # Font Size
+    button_font = pygame.font.Font(None, 25)
 
+    # Text
+    reset_text = button_font.render("Reset", 0, BLACK)
+    restart_text = button_font.render("Restart", 0, BLACK)
+    exit_text = button_font.render("Exit", 0, BLACK)
+
+    # Reset Surface
+    reset_surface = pygame.Surface((reset_text.get_size()[0] + 20, restart_text.get_size()[0] - 15))
+    reset_surface.fill(BUTTON_COLOR)
+    reset_surface.blit(reset_text, (10, 10))
+
+    # Reset Button
+    reset_rect = reset_surface.get_rect(center=[SCREEN_WIDTH // 2 - 250, SCREEN_HEIGHT // 2 + 325])
+    screen.blit(reset_surface, reset_rect)
+
+    # Restart Surface
+    restart_surface = pygame.Surface((restart_text.get_size()[0] + 20, restart_text.get_size()[0] - 15))
+    restart_surface.fill(BUTTON_COLOR)
+    restart_surface.blit(restart_text, (10, 10))
+
+    # Restart Button
+    restart_rect = restart_surface.get_rect(center=[SCREEN_WIDTH // 2 - 150, SCREEN_HEIGHT // 2 + 325])
+    screen.blit(restart_surface, restart_rect)
+
+    # Exit Surface
+    exit_surface = pygame.Surface((exit_text.get_size()[0] + 20, exit_text.get_size()[0] + 10))
+    exit_surface.fill(BUTTON_COLOR)
+    exit_surface.blit(exit_text, (10, 10))
+
+    # Exit Button
+    exit_rect = exit_surface.get_rect(center=[SCREEN_WIDTH // 2 - 50, SCREEN_HEIGHT // 2 + 325])
+    screen.blit(exit_surface, exit_rect)
+
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                if exit_rect.collidepoint(event.pos):
+                    pygame.quit()
+                    sys.exit()
+                elif restart_rect.collidepoint(event.pos):
+                    return
+                elif reset_rect.collidepoint(event.pos):
+                    return
+
+        pygame.display.update()
 
 def draw_game_won(screen):
     screen.fill(TITLE_BACKGROUND)
