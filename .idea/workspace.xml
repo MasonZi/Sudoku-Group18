@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c25f0551-833f-48ea-8659-1426ea69ba53" name="Changes" comment="Reverted changes" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/main" />
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="main" />
+  </component>
+  <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2k16YrbG7glQXTzzyCqgWRQO3sv" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Python.board.executor": "Run",
+    "Python.cell_and_board_class.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.main2.executor": "Run",
+    "Python.scrap_sudoku.executor": "Run",
+    "Python.sudoku.executor": "Run",
+    "Python.sudoku_generator.executor": "Run",
+    "Python.test.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": []
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-PY-241.15989.155" />
+        <option value="bundled-python-sdk-babbdf50b680-7c6932dee5e4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.15989.155" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c25f0551-833f-48ea-8659-1426ea69ba53" name="Changes" comment="" />
+      <created>1722438785986</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1722438785986</updated>
+      <workItem from="1722438787064" duration="5551000" />
+      <workItem from="1722610759513" duration="12794000" />
+      <workItem from="1722634027609" duration="231000" />
+      <workItem from="1722634270413" duration="295000" />
+      <workItem from="1722643491370" duration="70000" />
+      <workItem from="1722872010696" duration="4785000" />
+      <workItem from="1722876810203" duration="2716000" />
+      <workItem from="1722885921043" duration="6535000" />
+      <workItem from="1722892618025" duration="12999000" />
+      <workItem from="1722918538327" duration="229000" />
+      <workItem from="1722919124494" duration="2000" />
+      <workItem from="1722919136787" duration="84000" />
+      <workItem from="1722919275930" duration="3404000" />
+      <workItem from="1722952852983" duration="1240000" />
+      <workItem from="1722970462155" duration="1413000" />
+      <workItem from="1722990337619" duration="60000" />
+      <workItem from="1722990399558" duration="938000" />
+      <workItem from="1722991343232" duration="270000" />
+      <workItem from="1722991615911" duration="260000" />
+      <workItem from="1722991878685" duration="183000" />
+      <workItem from="1722992063745" duration="141000" />
+      <workItem from="1722992206698" duration="974000" />
+      <workItem from="1722993184124" duration="168000" />
+      <workItem from="1722993354689" duration="167000" />
+      <workItem from="1722993523254" duration="418000" />
+      <workItem from="1722994121124" duration="509000" />
+    </task>
+    <task id="LOCAL-00001" summary="Made some changes and started a bit.">
+      <option name="closed" value="true" />
+      <created>1722444589858</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1722444589858</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Created board.py, added constants to sudoku.py">
+      <option name="closed" value="true" />
+      <created>1722617103078</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1722617103078</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Worked on sudoku.py, feel free to correct any issues">
+      <option name="closed" value="true" />
+      <created>1722633682899</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1722633682899</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Worked on sudoku.py, feel free to correct any issues">
+      <option name="closed" value="true" />
+      <created>1722634560488</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1722634560488</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Worked on sudoku.py.">
+      <option name="closed" value="true" />
+      <created>1722875998752</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1722875998752</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Implemented GUI from test.py into sudoku.py and moved Cell class into Board class file.">
+      <option name="closed" value="true" />
+      <created>1722879590922</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1722879590922</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Updated test.py to main.py, implemented sudoku board, and scrapped sudoku.py for consistency.">
+      <option name="closed" value="true" />
+      <created>1722887380749</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1722887380749</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Updated main.py">
+      <option name="closed" value="true" />
+      <created>1722890132820</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1722890132820</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Updated main.py">
+      <option name="closed" value="true" />
+      <created>1722904306055</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1722904306055</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Tagged duplicate code that led to error.">
+      <option name="closed" value="true" />
+      <created>1722914554345</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1722914554345</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Just touched up some blank lines, typos">
+      <option name="closed" value="true" />
+      <created>1722920210967</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1722920210967</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Got the winning screen to show">
+      <option name="closed" value="true" />
+      <created>1722921181551</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1722921181551</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Got the Game Over :/ screen to show">
+      <option name="closed" value="true" />
+      <created>1722921653983</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1722921653983</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Reverted changes">
+      <option name="closed" value="true" />
+      <created>1722991528250</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1722991528250</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Reverted changes">
+      <option name="closed" value="true" />
+      <created>1722991680444</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1722991680444</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Reverted changes">
+      <option name="closed" value="true" />
+      <created>1722993242322</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1722993242322</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Reverted changes">
+      <option name="closed" value="true" />
+      <created>1722993381201</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1722993381201</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Reverted changes">
+      <option name="closed" value="true" />
+      <created>1722993413430</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1722993413430</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Reverted changes">
+      <option name="closed" value="true" />
+      <created>1722993418752</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1722993418752</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Reverted changes">
+      <option name="closed" value="true" />
+      <created>1722993425303</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1722993425303</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Reverted changes">
+      <option name="closed" value="true" />
+      <created>1722993578778</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1722993578778</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Reverted changes">
+      <option name="closed" value="true" />
+      <created>1722993610426</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1722993610426</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Made some changes and started a bit." />
+    <MESSAGE value="Created board.py, added constants to sudoku.py" />
+    <MESSAGE value="Worked on sudoku.py, feel free to correct any issues" />
+    <MESSAGE value="Worked on sudoku.py." />
+    <MESSAGE value="Implemented GUI from test.py into sudoku.py and moved Cell class into Board class file." />
+    <MESSAGE value="Updated test.py to main.py, implemented sudoku board, and scrapped sudoku.py for consistency." />
+    <MESSAGE value="Updated main.py" />
+    <MESSAGE value="Tagged duplicate code that led to error." />
+    <MESSAGE value="Just touched up some blank lines, typos" />
+    <MESSAGE value="Got the winning screen to show" />
+    <MESSAGE value="Got the Game Over :/ screen to show" />
+    <MESSAGE value="Reverted changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reverted changes" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Sudoku_Group18$sudoku_generator.coverage" NAME="sudoku_generator Coverage Results" MODIFIED="1722991592898" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Sudoku_Group18$cell_and_board_class.coverage" NAME="cell_and_board_class Coverage Results" MODIFIED="1722993040391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Sudoku_Group18$main.coverage" NAME="main Coverage Results" MODIFIED="1722994135728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Sudoku_Group18$board.coverage" NAME="board Coverage Results" MODIFIED="1722879165890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Sudoku_Group18$scrap_sudoku.coverage" NAME="scrap_sudoku Coverage Results" MODIFIED="1722920133043" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Sudoku_Group18$test.coverage" NAME="test Coverage Results" MODIFIED="1722887241025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Sudoku_Group18$sudoku.coverage" NAME="sudoku Coverage Results" MODIFIED="1722886994901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Sudoku_Group18$main2.coverage" NAME="main2 Coverage Results" MODIFIED="1722990861704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
