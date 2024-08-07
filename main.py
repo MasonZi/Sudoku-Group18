@@ -139,6 +139,8 @@ def draw_game_play(screen, difficulty):
 
 
 def draw_game_won(screen):
+    #Resets solution after win
+    sudoku_generator.Solution = []
     # Set background color
     screen.fill(TITLE_BACKGROUND)
     bg_image = pygame.image.load('sudoku.jpg')
@@ -173,6 +175,8 @@ def draw_game_won(screen):
 
 
 def draw_game_lost(screen):
+    # Resets Solution after loss
+    sudoku_generator.Solution = []
     # Set background color
     screen.fill(TITLE_BACKGROUND)
     bg_image = pygame.image.load('sudoku.jpg')
@@ -282,8 +286,11 @@ def main():
                         num_place = 9
                         board.sketch(9)
                     if event.key == pygame.K_RETURN or event.key == pygame.K_KP_ENTER:
-                        if board.place_number(num_place):
-                            nice = nice
+                        try:
+                            if board.place_number(num_place):
+                                nice = nice
+                        except:
+                            pass
                         if board.is_full() == True and board.check_board():
                             draw_game_won(screen)
                         elif board.is_full() == True and board.check_board() == False:

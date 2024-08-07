@@ -152,39 +152,51 @@ class Board:
         return None
 
     def check_board(self):
-        def is_valid(board):
-            def has_duplicates(sequence):
-                """Helper function to check if a sequence (list) contains duplicates."""
-                seen = set()
-                for num in sequence:
-                    if num != 0:
-                        if num in seen:
-                            return True
-                        seen.add(num)
-                return False
-
-            # Check all rows
-            for row in board:
-                if has_duplicates([cell.value for cell in row]):
+        # Solution is a Global Variable, which should be a list with nested lists of the solution
+        r = -1
+        for row in self.cells:
+            p = 0
+            r+=1
+            for x in row:
+                if x.value == Solution[r][p]:
+                    p+=1
+                    pass
+                elif x.value != Solution[r][p]:
                     return False
-
-            # Check all columns
-            for col in range(9):
-                column_values = [board[row][col].value for row in range(9)]
-                if has_duplicates(column_values):
-                    return False
-
-            # Check all 3x3 sub-grids
-            for box_y in range(0, 9, 3):
-                for box_x in range(0, 9, 3):
-                    box_values = [board[y][x].value for y in range(box_y, box_y + 3)
-                                  for x in range(box_x, box_x + 3)]
-                    if has_duplicates(box_values):
-                        return False
-
-            return True
-
-        return is_valid(self.grid)
+        return True
+        # def is_valid(board):
+        #     def has_duplicates(sequence):
+        #         """Helper function to check if a sequence (list) contains duplicates."""
+        #         seen = set()
+        #         for num in sequence:
+        #             if num != 0:
+        #                 if num in seen:
+        #                     return True
+        #                 seen.add(num)
+        #         return False
+        #
+        #     # Check all rows
+        #     for row in board:
+        #         if has_duplicates([cell.value for cell in row]):
+        #             return False
+        #
+        #     # Check all columns
+        #     for col in range(9):
+        #         column_values = [board[row][col].value for row in range(9)]
+        #         if has_duplicates(column_values):
+        #             return False
+        #
+        #     # Check all 3x3 sub-grids
+        #     for box_y in range(0, 9, 3):
+        #         for box_x in range(0, 9, 3):
+        #             box_values = [board[y][x].value for y in range(box_y, box_y + 3)
+        #                           for x in range(box_x, box_x + 3)]
+        #             if has_duplicates(box_values):
+        #                 return False
+        #
+        #     return True
+        #
+        # return is_valid(self.grid)
 
 
 

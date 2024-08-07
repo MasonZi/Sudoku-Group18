@@ -4,14 +4,14 @@ import random
 
 
 # import pygame
-
-
+Solution = []
 class SudokuGenerator:
     def __init__(self, row_length, removed_cells):
         self.row_length = row_length
         self.removed_cells = removed_cells
         self.board = [[0 for _ in range(row_length)] for _ in range(row_length)]
         self.box_length = int(math.sqrt(self.row_length))
+
 
     def get_board(self):
         return self.board
@@ -88,6 +88,11 @@ class SudokuGenerator:
     def fill_values(self):
         self.fill_diagonal()
         self.fill_remaining(0, self.box_length)
+        for row in self.board:
+            hold = []
+            for x in row:
+                hold.append(x)
+            Solution.append(hold)
 
     def remove_cells(self):
         cells = [(r, c) for r in range(self.row_length) for c in range(self.row_length)]
