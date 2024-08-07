@@ -31,7 +31,6 @@ def draw_game_start(screen):
     game_display.blit(bg_image, (0, 0))
     pygame.display.update()
 
-
     # Initialize and draw title and difficulty words
     sudoku_title = title_font.render("Welcome to Sudoku!", 0, BLACK)
     sudoku_rectangle = sudoku_title.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 - 150))
@@ -211,7 +210,6 @@ def main():
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     pygame.display.set_caption("Sudoku")
 
-
     # Show difficulty selection screen
     difficulty = draw_game_start(screen)
 
@@ -296,7 +294,7 @@ def main():
                         board.clear()
                     try:
                         if event.key == pygame.K_UP:
-                            board.select(row-1,col)
+                            board.select(row-1, col)
                             row -= 1
                         elif event.key == pygame.K_DOWN:
                             board.select(row+1, col)
@@ -309,7 +307,7 @@ def main():
                             col += 1
 
                     except:
-                        board.select(row,col)
+                        board.select(row, col)
 
         # Draw the board and buttons
         board.draw()
