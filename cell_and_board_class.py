@@ -184,7 +184,7 @@ class Board:
 
             return True
 
-        return is_valid(self.grid)
+        return is_valid(self.cells)
 
 
 
