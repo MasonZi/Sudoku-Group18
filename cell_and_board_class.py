@@ -1,7 +1,7 @@
 # Group 18
 import pygame
 from sudoku_generator import *
-from main import *
+from sudoku import *
 
 # Constants
 WHITE = (255, 255, 255)
